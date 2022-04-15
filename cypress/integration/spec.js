@@ -14,9 +14,9 @@ it('ssr',
   }
 );
 
-it('alert', () => {
+it('confirm', () => {
   cy.visit('/index.html');
   const stub = cy.stub();
-  cy.on('window:alert', stub);
-  cy.wrap(stub).should('be.calledWith', 'boo');
+  cy.on('window:confirm', stub);
+  cy.wrap(stub).should('be.calledWith', 'boo?');
 });
